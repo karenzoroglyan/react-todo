@@ -27,6 +27,15 @@ function App() {
         break;
     }
   }
+
+  function saveLocalTodos() {
+    if(localStorage.getItems('todos') === null) {
+      localStorage.setItem('todos', JSON.stringify([]));
+    } else {
+      localStorage.setItem('todos', JSON.stringify(todos))
+    }
+  }
+  
   return (
     <div className="App">
       <header>
